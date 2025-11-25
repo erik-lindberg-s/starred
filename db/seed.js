@@ -26,7 +26,7 @@ function reset() {
 
 function seed() {
   const users = generateUsers(10);
-  stmt = db.prepare("INSERT INTO user (firstName, lastName, email, password, salt) VALUES (?, ?, ?, ?, ?)");
+  const stmt = db.prepare("INSERT INTO user (firstName, lastName, email, password, salt) VALUES (?, ?, ?, ?, ?)");
   users.forEach(user => {
     stmt.run(user.firstName, user.lastName, user.email, user.password, user.salt);
   });

@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS favorite;
 
 CREATE TABLE user (
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -7,4 +8,12 @@ CREATE TABLE user (
   email TEXT NOT NULL,
   password TEXT NOT NULL,
   salt TEXT NOT NULL
+);
+
+CREATE TABLE favorite (
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL,
+  job_id INTEGER NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES user(id),
+  UNIQUE(user_id, job_id)
 );

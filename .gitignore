@@ -1,12 +1,9 @@
 node_modules
 
-# Nuxt dev/build outputs
-.output
-.data
-.nuxt
-.nitro
-.cache
+# Vite dev/build outputs
 dist
+dist-ssr
+*.local
 
 # Logs
 logs

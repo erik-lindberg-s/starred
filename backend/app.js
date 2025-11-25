@@ -5,6 +5,8 @@ var cors = require('cors')
 
 
 var usersRouter = require('./routes/users');
+var favoritesRouter = require('./routes/favorites');
+var aiMatchRouter = require('./ai-matching/aiMatchRoute');
 
 var app = express();
 
@@ -14,6 +16,8 @@ app.use(cookieParser());
 app.use(cors())
 
 app.use('/users', usersRouter);
+app.use('/favorites', favoritesRouter);
+app.use('/ai-match', aiMatchRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
